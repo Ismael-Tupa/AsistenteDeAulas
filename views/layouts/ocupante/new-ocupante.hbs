@@ -1,0 +1,66 @@
+{{#if result}}
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Editar ocupante</h3>
+        </div>
+        <div class="card-body">
+            <form action="/ocupante/update" method="POST">
+                {{#each result}}
+                <div class="mb-3">
+                    <input class="form-control" value={{nombre}} type="text" name="nombre" 
+                     placeholder="nombre y apellido" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" value={{carrera}} type="text" name="carrera" 
+                     placeholder="carrera" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" value={{cargo}} type="text" name="cargo" 
+                    placeholder="cargo">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" value={{cuil}} type="text" name="cuil" 
+                    placeholder="cuil">
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                
+                {{/each}}
+            </form>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Nueva usuario</h3>
+        </div>
+        <div class="card-body">
+            <form action="/ocupante/create" method="POST">
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="nombre" 
+                     placeholder="nombre y apellido" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="carrera" 
+                     placeholder="carrera" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="cargo" 
+                     placeholder="cargo" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="cuil" 
+                     placeholder="cuil" autofocus>
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{/if}}

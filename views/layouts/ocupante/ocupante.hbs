@@ -1,0 +1,33 @@
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="/ocupante/createFrom" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Nuevo</a>
+</div>
+
+<div class="row border-4">
+    
+    <table class="table border table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Nombre del usuario</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Cuil</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each ocupante}}
+            <tr>
+                <th scope="row">{{nombre}}</th>
+                <td>{{carrera}}</td>
+                <td>{{cargo}}</td>
+                <td>{{cuil}}</td>
+                <td>
+                    <a href="/ocupante/delete/{{cuil}}" class="btn btn-light"><i class="fa-solid fa-trash"></i></a>
+                    <a href="/ocupante/updateFrom/{{cuil}}" class="btn btn-light"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table> 
+</div>

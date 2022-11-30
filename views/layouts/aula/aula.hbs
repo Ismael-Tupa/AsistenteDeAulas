@@ -1,0 +1,31 @@
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="/aula/createFrom" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Nuevo</a>
+</div>
+
+<div class="row border-4">
+    
+    <table class="table border table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Nombre del aula</th>
+            <th scope="col">Cantidad de capacidad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each aula}}
+            <tr>
+                <th scope="row">{{nombre}}</th>
+                <td>{{cantidad}}</td>
+                <td>{{descripcion}}</td>
+                <td>
+                    <a href="/aula/delete/{{nombre}}" class="btn btn-light"><i class="fa-solid fa-trash"></i></a>
+                    <a href="/aula/updateFrom/{{nombre}}" class="btn btn-light"><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table> 
+</div>

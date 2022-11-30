@@ -1,0 +1,57 @@
+{{#if result}}
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Editar aula</h3>
+        </div>
+        <div class="card-body">
+            <form action="/aula/update" method="POST">
+                {{#each result}}
+                <div class="mb-3">
+                    <input class="form-control" value={{nombre}} id="nom" type="text" name="nombre" 
+                     placeholder="nombre" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" value={{cantidad}} id="can" type="number" name="cantidad" 
+                     placeholder="capacidad" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" value={{descripcion}} id="des" type="text" name="descripcion" 
+                    placeholder="descripcion">
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+                
+                {{/each}}
+            </form>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="col-md-4 mx-auto">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Nueva aula</h3>
+        </div>
+        <div class="card-body">
+            <form action="/aula/create" method="POST">
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="nombre" 
+                     placeholder="nombre" autofocus>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control" type="text" name="cantidad" 
+                     placeholder="capacidad" autofocus>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="descripcion" placeholder="descripcion"></textarea>
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,46 @@
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a href="/estadoAula/Desocupado" class="btn btn-primary me-md-2" type="button">Disponibles</a>
+  <a href="/estadoAula/Ocupado" class="btn btn-primary" type="button">Ocupadas</a>
+</div>
+<div class="row border-4">    
+    <table class="table border table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Nombre del aula</th>
+            <th scope="col">Capasidad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Nombre del ocupante</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if op}}
+                {{#each estadoAula}}
+                <tr>
+                    <th scope="row">{{nombreA}}</th>
+                    <td>{{cantidad}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>{{estado}}</td>
+                    <td>{{cargo}}</td>
+                    <td>{{nombreO}}</td>
+                    <td><a href="/estadoAula/cambio/{{estado}}/{{id}}/{{nombreA}}" class="btn btn-primary"><i class="fa-solid fa-arrows-rotate"></i></a></td>
+                </tr>
+                {{/each}}
+            {{else}}
+                {{#each estadoAula}}
+                <tr>
+                    <th scope="row">{{nombreA}}</th>
+                    <td>{{cantidad}}</td>
+                    <td>{{descripcion}}</td>
+                    <td>{{estado}}</td>
+                    <td>{{cargo}}</td>
+                    <td>{{nombreO}}</td>
+                </tr>
+                {{/each}}
+            {{/if}}
+        </tbody>
+    </table> 
+</div>
+
