@@ -3,11 +3,11 @@ const mysql = require('mysql');
 const {DB_HOSTX,DB_USERX,DB_PASSWORDX,DB_DATABASEX} = process.env;
 
 const connection = mysql.createConnection({
-    host: DB_HOSTX,
+    host: "mysql-ismael.alwaysdata.net",
     port: 3306,
-    user: DB_USERX,
-    password: DB_PASSWORDX,
-    database: DB_DATABASEX
+    user: "ismael",
+    password: "10646367",
+    database: "ismael_ins-aaa"
 });
 
 connection.connect((err)=>{
